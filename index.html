@@ -1,257 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAHMI COLLECTION | Elegance in Every Drape</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FAHMI COLLECTION — Elegant & Luxury Hijab Boutique</title>
+    <meta name="description" content="FAHMI COLLECTION — Hijab Elegan & Nyaman. Gresik." />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Gaya CSS ada di sini, untuk kemudahan, digabung dalam satu file */
-        body {
-            font-family: 'Times New Roman', Times, serif; /* Font elegan */
-            margin: 0;
-            padding: 0;
-            background-color: #F8F8F8; /* Soft Beige/Grey */
-            color: #333;
+        /* Variabel Warna dan Gaya */
+        :root{
+            --bg: #fffcf8; 
+            --card: #ffffff;
+            --muted: #5d4a41; 
+            --accent: #92756d; /* Muted Gold/Taupe Accent */
+            --accent-light: #f5ede6; 
+            --text-color: #2c2c2c;
+            --price-color: #a04000; 
+            font-family: 'Poppins', sans-serif;
         }
-        .header {
-            background-color: #1A1A2E; /* Deep Navy/Charcoal */
-            color: #FFF;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #FFD700; /* Metallic Gold Accent */
-        }
-        .nav a {
-            color: #FFF;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-        .nav a:hover {
-            color: #FFD700;
-        }
-        .hero-section {
-            background: url('[Placeholder Image URL for Elegant Hijab Model]'); /* GANTI DENGAN GAMBAR HIJAB MODEL */
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #FFF;
-            position: relative;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Overlay gelap */
-            z-index: 1;
-        }
-        .hero-content {
-            z-index: 2;
-            padding: 20px;
-        }
-        .hero-content h1 {
-            font-size: 4em;
-            margin-bottom: 10px;
-            color: #FFD700;
-        }
-        .hero-content p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-        .cta-button {
-            background-color: #FFD700;
-            color: #1A1A2E;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #E6C200;
-            transform: scale(1.05);
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text-color);
         }
 
-        /* --- Bagian Katalog Produk --- */
-        .section-title {
-            text-align: center;
-            padding: 50px 0 20px 0;
-            font-size: 2.5em;
-            color: #1A1A2E;
+        /* Typography */
+        .logo-text, h2, h4{
+            font-family: 'Playfair Display', serif;
         }
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px 5%;
+        .logo-text{
+            font-size:1.5em;
+            color:var(--text-color);
         }
-        .product-card {
-            width: 300px;
-            background-color: #FFF;
-            border: 1px solid #E0E0E0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            padding-bottom: 15px;
-            transition: box-shadow 0.3s;
-        }
-        .product-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        .product-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        .product-card h3 {
-            font-size: 1.2em;
-            margin: 10px 0 5px 0;
-            color: #1A1A2E;
-        }
-        .product-card .price {
-            font-size: 1.4em;
-            color: #8B0000; /* Merah Marun untuk harga */
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .buy-button {
-            background-color: #1A1A2E;
-            color: #FFF;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 3px;
-            font-size: 0.9em;
-            transition: background-color 0.3s;
-        }
-        .buy-button:hover {
-            background-color: #3C3C5C;
+        h2{
+            font-size:3.5em;
+            margin:0 0 15px 0;
+            line-height:1.1;
         }
 
-        /* --- Footer --- */
-        .footer {
-            background-color: #1A1A2E;
-            color: #FFF;
-            text-align: center;
-            padding: 30px 5%;
-            margin-top: 50px;
-            font-size: 0.9em;
+        /* Header & Navigasi */
+        header{
+            padding:25px 5%;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            background:var(--card);
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+            position:sticky;
+            top:0;
+            z-index:100;
         }
-        .footer p {
-            margin: 5px 0;
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{
+            font-family: 'Playfair Display', serif;
+            font-size:2em;
+            font-weight:700;
+            color:var(--accent);
+            letter-spacing:1px;
         }
-        
-        /* Media Queries untuk Responsif */
-        @media (max-width: 768px) {
-            .nav {
-                display: none; /* Sembunyikan navigasi di mobile, bisa diganti dengan menu burger */
-            }
-            .hero-content h1 {
-                font-size: 2.5em;
-            }
-            .hero-content p {
-                font-size: 1.1em;
-            }
-            .product-card {
-                width: 100%;
-                max-width: 350px;
-            }
+        .nav a{
+            text-decoration:none;
+            color:var(--text-color);
+            margin-left:20px;
+            font-weight:600;
+            cursor:pointer;
+            transition:color 0.3s;
+        }
+        .nav a:hover{color:var(--accent)}
+
+        /* Tombol (Button Styling) */
+        .btn{
+            padding:10px 18px;
+            border-radius:8px;
+            border:0;
+            cursor:pointer;
+            font-weight:600;
+            transition:background 0.3s;
+        }
+        .primary-btn{
+            background:var(--accent);
+            color:#fff;
+        }
+        .primary-btn:hover{background:#7c655d}
+        .secondary-btn{
+            background:transparent;
+            border:1px solid var(--accent);
+            color:var(--accent);
+        }
+        .secondary-btn:hover{
+            background:var(--accent-light);
+        }
+        .clear-btn{
+            background:#ccc;
+            color:var(--text-color);
+            padding:10px;
+        }
+
+        /* Hero Section */
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 450px;
+            gap:40px;
+            align-items:center;
+            padding:60px 5%;
+            max-width:1400px;
+            margin:0 auto;
+        }
+        .eyebrow{
+            display:inline-block;
+            background:var(--accent-light);
+            color:var(--accent);
+            padding:8px 15px;
+            border-radius:30px;
+            font-weight:700;
+            margin-bottom:16px;
+            font-size:0.9em;
+        }
+        p.lead{margin:0 0 25px 0;color:var(--muted);line-height:1.7;font-size:1.1em}
+        .shop-actions{display:flex;gap:15px;margin-top:20px}
+        .hero-image-wrap{
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 15px 50px rgba(0,0,0,0.1);
+        }
+        .hero-image-wrap img{width:100%;height:auto;display:block}
+
+        /* Catalog */
+        .catalog{padding:50px 5%;max-width:1400px;margin:0 auto}
+        .section-title h3{
+            font-size:2.5em;
+            margin:0 0 10px 0;
+            color:var(--accent);
+        }
+        .section-title p{margin:0 0 30px 0;color:var(--muted)}
+
+        .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+        .card{
+            background:var(--card);
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 4px 15px rgba(0,0,0,0.05);
+            transition:transform 0.3s;
+        }
+        .card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.1)}
+
+        .product-img{height:300px;overflow:hidden}
+        .product-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+        .card-body{padding:15px}
+        .prod-title{font-weight:700;margin:0 0 5px 0;font-size:1.1em}
+        .prod-price{color:var(--price-color);font-weight:700;font-size:1.3em}
+        .prod-desc{color:var(--muted);font-size:0.9em;margin:5px 0 15px 0}
+        .actions{display:flex;gap:10px;margin-top:10px}
+        .buy-btn{flex-grow:1;text-align:center;padding:12px}
+
+        /* Footer & Cart Drawer */
+        footer{
+            background:var(--accent-light);
+            padding:40px 5%;
+            border-top:1px solid #e0d0c0;
+            color:var(--muted);
+            font-size:0.9em;
+        }
+        .foot-grid{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            max-width:1400px;
+            margin:0 auto;
+        }
+        .foot-grid h4{color:var(--accent)}
+        .small{font-size:0.85em;color:var(--muted)}
+
+        .cart-btn{position:fixed;right:25px;bottom:25px;background:var(--accent);color:#fff;padding:12px 14px;border-radius:50%;box-shadow:0 12px 30px rgba(18,16,15,0.12);border:0;cursor:pointer;font-weight:700;width:50px;height:50px;z-index:200;}
+        .drawer{position:fixed;right:25px;bottom:90px;width:340px;background:var(--card);border-radius:14px;padding:15px;box-shadow:0 24px 60px rgba(18,16,15,0.12);display:none;z-index:200}
+        .drawer.open{display:block}
+        .drawer h4{margin:0 0 10px 0;font-weight:700}
+        .cart-item{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.06)}
+        .cart-item img{width:60px;height:60px;border-radius:8px;object-fit:cover}
+
+        /* Responsive */
+        @media (max-width:1100px){
+            .hero{grid-template-columns:1fr}
+            .hero-image-wrap{margin-top:30px;}
+            .grid{grid-template-columns:repeat(2,1fr)}
+            h2{font-size:3em;}
+        }
+        @media (max-width:650px){
+            .grid{grid-template-columns:repeat(1,1fr)}
+            header{padding:15px 5%;}
+            h2{font-size:2.2em;}
+            .drawer{right:15px;left:15px;width:auto;}
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">FAHMI COLLECTION</div>
+    <header>
+        <div class="brand">
+            <div class="logo">FC</div>
+            <div>
+                <span class="logo-text">FAHMI COLLECTION</span>
+                <div class="small">Sungonlegowo, Bungah — Gresik</div>
+            </div>
+        </div>
         <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Shop Catalog</a>
-            <a href="#">New Arrivals</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+            <a onclick="scrollToSection('catalog')">Katalog Produk</a>
+            <a onclick="scrollToSection('contact')">Kontak</a>
+            <button class="btn accent-btn" onclick="scrollToSection('catalog')">Belanja Sekarang</button>
         </nav>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Elegance in Every Drape</h1>
-            <p>Discover our exclusive collection of sophisticated and modern hijabs.</p>
-            <a href="#new-arrivals" class="cta-button">SHOP NEW ARRIVALS</a>
-        </div>
-    </section>
-
-    <section id="new-arrivals">
-        <h2 class="section-title">✨ Our Latest Collection</h2>
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/E6E6FA/000000?text=Pashmina+Silk+Navy" alt="Pashmina Silk Navy">
-                <h3>Pashmina Silk</h3>
-                <p>Luxurious and elegant drape.</p>
-                <p class="price">Rp 129.000</p>
-                <a href="#" class="buy-button">View Details</a>
+    <main>
+        <section class="hero">
+            <div class="hero-left">
+                <div class="eyebrow">HIJAB BUTIK MODERN & MEWAH</div>
+                <h2>FAHMI COLLECTION — Elegansi dalam Setiap Lipatan Kain.</h2>
+                <p class="lead">Temukan koleksi hijab premium: Pashmina, Segi Empat Voal, dan Khimar dengan desain yang selalu terkini. Hubungi kami via WhatsApp.</p>
+                <div class="shop-actions">
+                    <button class="btn primary-btn" onclick="scrollToSection('catalog')">Lihat Katalog</button>
+                    <button class="btn secondary-btn" onclick="openWhatsApp('Halo, saya ingin memesan/bertanya tentang produk FAHMI COLLECTION.')">Order via WhatsApp</button>
+                </div>
             </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/C0C0C0/000000?text=Square+Voal+Beige" alt="Square Voal Beige">
-                <h3>Square Voal Premium</h3>
-                <p>Perfectly shaped and comfortable.</p>
-                <p class="price">Rp 85.000</p>
-                <a href="#" class="buy-button">View Details</a>
+            <div class="hero-image-wrap">
+                <img src="images/hero-model.jpg" alt="Model Hijab FAHMI COLLECTION Elegan"/>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/F08080/FFFFFF?text=Instant+Jersey+Dusty+Pink" alt="Instant Jersey Dusty Pink">
-                <h3>Instant Jersey Deluxe</h3>
-                <p>Effortless style in seconds.</p>
-                <p class="price">Rp 99.000</p>
-                <a href="#" class="buy-button">View Details</a>
+        <section id="catalog" class="catalog">
+            <div class="section-title">
+                <h3>Koleksi Eksklusif Kami</h3>
+                <p>Harga Terjamin Kualitas Premium. Siap Kirim dari Gresik.</p>
             </div>
-            
-            </div>
-    </section>
+            <div class="grid" id="product-grid">
+                </div>
+        </section>
+    </main>
 
-    <section>
-        <h2 class="section-title">Why Choose FAHMI COLLECTION?</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; text-align: center; padding-bottom: 50px;">
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">💎</p>
-                <h3>Premium Quality</h3>
-                <p>Carefully selected fabric for maximum comfort and luxurious feel.</p>
+    <footer id="contact">
+        <div class="foot-grid">
+            <div>
+                <h4>FAHMI COLLECTION</h4>
+                <div class="addr">Sungonlegowo, Bungah, Gresik, Indonesia.</div>
+                <div class="small" style="margin-top:8px;">Hubungi Kami: <strong id="wa-number">+62 812-3456-7890</strong></div>
             </div>
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">📍</p>
-                <h3>Local Craftsmanship</h3>
-                <p>Proudly based in Sungonlegowo, Bungah, Gresik.</p>
-            </div>
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">✨</p>
-                <h3>Exclusive Designs</h3>
-                <p>Stay ahead with our latest contemporary and chic hijab styles.</p>
+            <div style="text-align:right">
+                <div class="small">© 2025 All Rights Reserved.</div>
+                <div style="margin-top:10px"><button class="btn primary-btn" onclick="openWhatsApp('Halo, saya ingin informasi lebih lanjut tentang produk FAHMI COLLECTION')">Kirim Pesan WA</button></div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <p>FAHMI COLLECTION &copy; 2025 | All Rights Reserved.</p>
-        <p>Sungonlegowo, Bungah, Gresik, Indonesia.</p>
-        <p style="margin-top: 10px;"><a href="#" style="color: #FFD700;">Privacy Policy</a> | <a href="#" style="color: #FFD700;">Terms of Service</a></p>
     </footer>
 
+    <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
+    <div class="drawer" id="cart-drawer">
+        <h4>Keranjang Belanja Anda</h4>
+        <div id="cart-items"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:15px">
+            <div>
+                <div class="small">TOTAL HARGA</div>
+                <div style="font-weight:800;font-size:1.4em;" id="cart-total">Rp 0</div>
+            </div>
+            <div style="display:flex;gap:8px">
+                <button class="btn clear-btn" onclick="clearCart()">Kosongkan</button>
+                <button class="btn primary-btn" onclick="checkoutWhatsApp()">Checkout WA</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =========================================================
+        // DATA PRODUK: GANTI DATA INI UNTUK MENGEDIT KATALOG
+        // =========================================================
+        const products = [
+            // Pastikan Anda mengunggah gambar dengan nama file ini ke folder images/
+            {id:1,name:'Pashmina Ceruti Premium',price:135000,desc:'Bahan ceruti babydoll premium, jatuh, adem. Pilihan warna eksklusif.',img:'images/pashmina1.jpg'},
+            {id:2,name:'Bella Square Exclusive',price:89000,desc:'Segi empat bahan Voal, sangat mudah dibentuk dan tegak di dahi.',img:'images/square1.jpg'},
+            {id:3,name:'Khimar Daily Plisket',price:155000,desc:'Khimar instan dengan detail plisket, syar\'i dan elegan.',img:'images/khimar1.jpg'},
+            {id:4,name:'Inner Ciput Rajut',price:25000,desc:'Inner antislip, nyaman dipakai seharian tanpa pusing.',img:'images/inner1.jpg'},
+            {id:5,name:'Pashmina Velvet Luxury',price:180000,desc:'Sangat cocok untuk pesta dan acara formal, efek berkilau mewah.',img:'images/pashmina2.jpg'},
+        ];
+        // =========================================================
+
+        // FUNGSI UTILITY (JANGAN DIUBAH)
+        function formatRupiah(n){ return 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }
+
+        // RENDER PRODUK
+        const grid = document.getElementById('product-grid')
+        products.forEach(p => {
+            const card = document.createElement('article')
+            card.className = 'card'
+            card.innerHTML = `
+                <div class="product-img"><img src="${p.img}" alt="${p.name}"></div>
+                <div class="card-body">
+                    <h4 class="prod-title">${p.name}</h4>
+                    <div class="prod-desc">${p.desc}</div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="prod-price">${formatRupiah(p.price)}</div>
+                        <div class="actions">
+                            <button class="btn primary-btn buy-btn" onclick="addToCart(${p.id})">Beli</button>
+                        </div>
+                    </div>
+                </div>
+            `
+            grid.appendChild(card)
+        })
+
+        // LOGIKA KERANJANG (JANGAN DIUBAH)
+        let cart = []
+        function addToCart(id){
+            const prod = products.find(x=>x.id===id)
+            const existing = cart.find(x=>x.id===id)
+            if(existing){ existing.qty++ } else { cart.push({id:prod.id,name:prod.name,price:prod.price,img:prod.img,qty:1}) }
+            updateCartUI()
+            document.getElementById('cart-drawer').classList.add('open')
+        }
+        function updateCartUI(){
+            const container = document.getElementById('cart-items')
+            container.innerHTML = ''
+            let total = 0
+            cart.forEach(item=>{
+                total += item.price * item.qty
+                const el = document.createElement('div')
+                el.className = 'cart-item'
+                el.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div style="flex:1">
+                        <div style="font-weight:700">${item.name}</div>
+                        <div class="small">${formatRupiah(item.price)} x ${item.qty}</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+                        <button class="btn primary-btn" style="padding:6px 10px;height:auto;font-size:0.8em;" onclick="changeQty(${item.id},1)">+</button>
+                        <button class="btn clear-btn" style="padding:6px 10px;height:auto;font-size:0.8em;" onclick="changeQty(${item.id},-1)">-</button>
+                    </div>
+                `
+                container.appendChild(el)
+            })
+            document.getElementById('cart-total').innerText = formatRupiah(total)
+            document.getElementById('cart-count').innerText = cart.reduce((s,i)=>s+i.qty,0)
+        }
+        function changeQty(id,delta){
+            const item = cart.find(x=>x.id===id)
+            if(!item) return
+            item.qty += delta
+            if(item.qty <= 0){ cart = cart.filter(x=>x.id!==id) }
+            updateCartUI()
+        }
+        function clearCart(){ cart = []; updateCartUI(); }
+        function toggleCart(){ document.getElementById('cart-drawer').classList.toggle('open') }
+
+        function checkoutWhatsApp(){
+            if(cart.length===0){ alert('Keranjang kosong. Mohon tambahkan produk sebelum checkout.'); return }
+            const lines = []
+            lines.push('Halo FAHMI COLLECTION, saya ingin melakukan pemesanan (Checkout WA):')
+            lines.push('---')
+            cart.forEach(item=>{
+                lines.push(`✅ ${item.qty} x ${item.name} (${formatRupiah(item.price)})`)
+            })
+            const total = cart.reduce((s,i)=>s+i.price*i.qty,0)
+            lines.push('---')
+            lines.push('TOTAL BELANJA: ' + formatRupiah(total))
+            lines.push('---')
+            lines.push('DATA CUSTOMER:\nNama:\nAlamat Pengiriman Lengkap:\nCatatan Tambahan:')
+
+            const message = encodeURIComponent(lines.join('\n'))
+            const phone = document.getElementById('wa-number').innerText.replace(/[^+0-9]/g,'')
+            const url = `https://wa.me/${phone.replace('+','')}?text=${message}`
+            window.open(url,'_blank')
+        }
+        function openWhatsApp(text){
+            const phone = document.getElementById('wa-number').innerText.replace(/[^+0-9]/g,'')
+            const url = `https://wa.me/${phone.replace('+','')}?text=${encodeURIComponent(text)}`
+            window.open(url,'_blank')
+        }
+        function scrollToSection(id){
+            const el = document.getElementById(id)
+            if(!el) window.scrollTo({top:0,behavior:'smooth'})
+            else el.scrollIntoView({behavior:'smooth',block:'start'})
+        }
+        updateCartUI()
+    </script>
 </body>
 </html>
