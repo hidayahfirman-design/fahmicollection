@@ -1,0 +1,89 @@
+!doctype html
+html lang=en
+head
+    meta charset=utf-8 
+    meta name=viewport content=width=device-width,initial-scale=1 
+    titleFAHMI COLLECTION — Elegant & Luxury Hijab Boutiquetitle
+    meta name=description content=FAHMI COLLECTION — Hijab Elegan & Nyaman. Gresik. 
+    
+    link href=httpsfonts.googleapis.comcss2family=Playfair+Displaywght@700&family=Poppinswght@300;400;600;700&display=swap rel=stylesheet
+    
+    link rel=stylesheet href=style.css 
+head
+body
+
+    header
+        div class=brand
+            div class=logoFCdiv
+            div
+                span class=logo-textFAHMI COLLECTIONspan
+                div class=smallSungonlegowo, Bungah — Gresikdiv
+            div
+        div
+        nav class=nav
+            a onclick=scrollToSection('catalog')Katalog Produka
+            a onclick=scrollToSection('contact')Kontaka
+            button class=btn accent-btn onclick=scrollToSection('catalog')Belanja Sekarangbutton
+        nav
+    header
+
+    main
+        section class=hero
+            div class=hero-left
+                div class=eyebrowHIJAB BUTIK MODERN & MEWAHdiv
+                h2FAHMI COLLECTION — Elegansi dalam Setiap Lipatan Kain.h2
+                p class=leadTemukan koleksi hijab premium Pashmina, Segi Empat Voal, dan Khimar dengan desain yang selalu terkini. Hubungi kami via WhatsApp.p
+                div class=shop-actions
+                    button class=btn primary-btn onclick=scrollToSection('catalog')Lihat Katalogbutton
+                    button class=btn secondary-btn onclick=openWhatsApp('Halo, saya ingin memesanbertanya tentang produk FAHMI COLLECTION.')Order via WhatsAppbutton
+                div
+            div
+
+            div class=hero-image-wrap
+                img src=imageshero-model.jpg alt=Model Hijab FAHMI COLLECTION Elegan
+            div
+        section
+
+        section id=catalog class=catalog
+            div class=section-title
+                h3Koleksi Eksklusif Kamih3
+                pHarga Terjamin Kualitas Premium. Siap Kirim dari Gresik.p
+            div
+            div class=grid id=product-grid
+                div
+        section
+    main
+
+    footer id=contact
+        div class=foot-grid
+            div
+                h4FAHMI COLLECTIONh4
+                div class=addrSungonlegowo, Bungah, Gresik, Indonesia.div
+                div class=small style=margin-top8px;Hubungi Kami strong id=wa-number+62 812-3456-7890strongdiv
+            div
+            div style=text-alignright
+                div class=small© 2025 All Rights Reserved.div
+                div style=margin-top10pxbutton class=btn primary-btn onclick=openWhatsApp('Halo, saya ingin informasi lebih lanjut tentang produk FAHMI COLLECTION')Kirim Pesan WAbuttondiv
+            div
+        div
+    footer
+
+    button class=cart-btn onclick=toggleCart()🛒 span id=cart-count0spanbutton
+    div class=drawer id=cart-drawer
+        h4Keranjang Belanja Andah4
+        div id=cart-itemsdiv
+        div style=displayflex;justify-contentspace-between;align-itemscenter;padding-top15px
+            div
+                div class=smallTOTAL HARGAdiv
+                div style=font-weight800;font-size1.4em; id=cart-totalRp 0div
+            div
+            div style=displayflex;gap8px
+                button class=btn clear-btn onclick=clearCart()Kosongkanbutton
+                button class=btn primary-btn onclick=checkoutWhatsApp()Checkout WAbutton
+            div
+        div
+    div
+
+    script src=script.jsscript
+body
+html
