@@ -1,257 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAHMI COLLECTION | Elegance in Every Drape</title>
-    <style>
-        /* Gaya CSS ada di sini, untuk kemudahan, digabung dalam satu file */
-        body {
-            font-family: 'Times New Roman', Times, serif; /* Font elegan */
-            margin: 0;
-            padding: 0;
-            background-color: #F8F8F8; /* Soft Beige/Grey */
-            color: #333;
-        }
-        .header {
-            background-color: #1A1A2E; /* Deep Navy/Charcoal */
-            color: #FFF;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #FFD700; /* Metallic Gold Accent */
-        }
-        .nav a {
-            color: #FFF;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-        .nav a:hover {
-            color: #FFD700;
-        }
-        .hero-section {
-            background: url('[Placeholder Image URL for Elegant Hijab Model]'); /* GANTI DENGAN GAMBAR HIJAB MODEL */
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #FFF;
-            position: relative;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Overlay gelap */
-            z-index: 1;
-        }
-        .hero-content {
-            z-index: 2;
-            padding: 20px;
-        }
-        .hero-content h1 {
-            font-size: 4em;
-            margin-bottom: 10px;
-            color: #FFD700;
-        }
-        .hero-content p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-        .cta-button {
-            background-color: #FFD700;
-            color: #1A1A2E;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #E6C200;
-            transform: scale(1.05);
-        }
-
-        /* --- Bagian Katalog Produk --- */
-        .section-title {
-            text-align: center;
-            padding: 50px 0 20px 0;
-            font-size: 2.5em;
-            color: #1A1A2E;
-        }
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px 5%;
-        }
-        .product-card {
-            width: 300px;
-            background-color: #FFF;
-            border: 1px solid #E0E0E0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            padding-bottom: 15px;
-            transition: box-shadow 0.3s;
-        }
-        .product-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        .product-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        .product-card h3 {
-            font-size: 1.2em;
-            margin: 10px 0 5px 0;
-            color: #1A1A2E;
-        }
-        .product-card .price {
-            font-size: 1.4em;
-            color: #8B0000; /* Merah Marun untuk harga */
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .buy-button {
-            background-color: #1A1A2E;
-            color: #FFF;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 3px;
-            font-size: 0.9em;
-            transition: background-color 0.3s;
-        }
-        .buy-button:hover {
-            background-color: #3C3C5C;
-        }
-
-        /* --- Footer --- */
-        .footer {
-            background-color: #1A1A2E;
-            color: #FFF;
-            text-align: center;
-            padding: 30px 5%;
-            margin-top: 50px;
-            font-size: 0.9em;
-        }
-        .footer p {
-            margin: 5px 0;
-        }
-        
-        /* Media Queries untuk Responsif */
-        @media (max-width: 768px) {
-            .nav {
-                display: none; /* Sembunyikan navigasi di mobile, bisa diganti dengan menu burger */
-            }
-            .hero-content h1 {
-                font-size: 2.5em;
-            }
-            .hero-content p {
-                font-size: 1.1em;
-            }
-            .product-card {
-                width: 100%;
-                max-width: 350px;
-            }
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FAHMI COLLECTION — Elegant & Luxury Hijab Boutique</title>
+    <meta name="description" content="FAHMI COLLECTION — Hijab Elegan & Nyaman. Gresik." />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">FAHMI COLLECTION</div>
+    <header>
+        <div class="brand">
+            <div class="logo">FC</div>
+            <div>
+                <span class="logo-text">FAHMI COLLECTION</span>
+                <div class="small">Sungonlegowo, Bungah — Gresik</div>
+            </div>
+        </div>
         <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Shop Catalog</a>
-            <a href="#">New Arrivals</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+            <a onclick="scrollToSection('catalog')">Katalog Produk</a>
+            <a onclick="scrollToSection('contact')">Kontak</a>
+            <button class="btn accent-btn" onclick="scrollToSection('catalog')">Belanja Sekarang</button>
         </nav>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Elegance in Every Drape</h1>
-            <p>Discover our exclusive collection of sophisticated and modern hijabs.</p>
-            <a href="#new-arrivals" class="cta-button">SHOP NEW ARRIVALS</a>
-        </div>
-    </section>
-
-    <section id="new-arrivals">
-        <h2 class="section-title">✨ Our Latest Collection</h2>
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/E6E6FA/000000?text=Pashmina+Silk+Navy" alt="Pashmina Silk Navy">
-                <h3>Pashmina Silk</h3>
-                <p>Luxurious and elegant drape.</p>
-                <p class="price">Rp 129.000</p>
-                <a href="#" class="buy-button">View Details</a>
+    <main>
+        <section class="hero">
+            <div class="hero-left">
+                <div class="eyebrow">HIJAB BUTIK MODERN & MEWAH</div>
+                <h2>FAHMI COLLECTION — Elegansi dalam Setiap Lipatan Kain.</h2>
+                <p class="lead">Temukan koleksi hijab premium: Pashmina, Segi Empat Voal, dan Khimar dengan desain yang selalu terkini. Hubungi kami via WhatsApp.</p>
+                <div class="shop-actions">
+                    <button class="btn primary-btn" onclick="scrollToSection('catalog')">Lihat Katalog</button>
+                    <button class="btn secondary-btn" onclick="openWhatsApp('Halo, saya ingin memesan/bertanya tentang produk FAHMI COLLECTION.')">Order via WhatsApp</button>
+                </div>
             </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/C0C0C0/000000?text=Square+Voal+Beige" alt="Square Voal Beige">
-                <h3>Square Voal Premium</h3>
-                <p>Perfectly shaped and comfortable.</p>
-                <p class="price">Rp 85.000</p>
-                <a href="#" class="buy-button">View Details</a>
+            <div class="hero-image-wrap">
+                <img src="images/hero-model.jpg" alt="Model Hijab FAHMI COLLECTION Elegan"/>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x350/F08080/FFFFFF?text=Instant+Jersey+Dusty+Pink" alt="Instant Jersey Dusty Pink">
-                <h3>Instant Jersey Deluxe</h3>
-                <p>Effortless style in seconds.</p>
-                <p class="price">Rp 99.000</p>
-                <a href="#" class="buy-button">View Details</a>
+        <section id="catalog" class="catalog">
+            <div class="section-title">
+                <h3>Koleksi Eksklusif Kami</h3>
+                <p>Harga Terjamin Kualitas Premium. Siap Kirim dari Gresik.</p>
             </div>
-            
-            </div>
-    </section>
+            <div class="grid" id="product-grid">
+                </div>
+        </section>
+    </main>
 
-    <section>
-        <h2 class="section-title">Why Choose FAHMI COLLECTION?</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; text-align: center; padding-bottom: 50px;">
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">💎</p>
-                <h3>Premium Quality</h3>
-                <p>Carefully selected fabric for maximum comfort and luxurious feel.</p>
+    <footer id="contact">
+        <div class="foot-grid">
+            <div>
+                <h4>FAHMI COLLECTION</h4>
+                <div class="addr">Sungonlegowo, Bungah, Gresik, Indonesia.</div>
+                <div class="small" style="margin-top:8px;">Hubungi Kami: <strong id="wa-number">+62 812-3456-7890</strong></div>
             </div>
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">📍</p>
-                <h3>Local Craftsmanship</h3>
-                <p>Proudly based in Sungonlegowo, Bungah, Gresik.</p>
-            </div>
-            <div style="width: 250px;">
-                <p style="font-size: 2.5em; color: #FFD700;">✨</p>
-                <h3>Exclusive Designs</h3>
-                <p>Stay ahead with our latest contemporary and chic hijab styles.</p>
+            <div style="text-align:right">
+                <div class="small">© 2025 All Rights Reserved.</div>
+                <div style="margin-top:10px"><button class="btn primary-btn" onclick="openWhatsApp('Halo, saya ingin informasi lebih lanjut tentang produk FAHMI COLLECTION')">Kirim Pesan WA</button></div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <p>FAHMI COLLECTION &copy; 2025 | All Rights Reserved.</p>
-        <p>Sungonlegowo, Bungah, Gresik, Indonesia.</p>
-        <p style="margin-top: 10px;"><a href="#" style="color: #FFD700;">Privacy Policy</a> | <a href="#" style="color: #FFD700;">Terms of Service</a></p>
     </footer>
 
+    <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
+    <div class="drawer" id="cart-drawer">
+        <h4>Keranjang Belanja Anda</h4>
+        <div id="cart-items"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:15px">
+            <div>
+                <div class="small">TOTAL HARGA</div>
+                <div style="font-weight:800;font-size:1.4em;" id="cart-total">Rp 0</div>
+            </div>
+            <div style="display:flex;gap:8px">
+                <button class="btn clear-btn" onclick="clearCart()">Kosongkan</button>
+                <button class="btn primary-btn" onclick="checkoutWhatsApp()">Checkout WA</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
