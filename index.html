@@ -8,7 +8,194 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Variabel Warna dan Gaya */
+        :root{
+            --bg: #fffcf8; 
+            --card: #ffffff;
+            --muted: #5d4a41; 
+            --accent: #92756d; /* Muted Gold/Taupe Accent */
+            --accent-light: #f5ede6; 
+            --text-color: #2c2c2c;
+            --price-color: #a04000; 
+            font-family: 'Poppins', sans-serif;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text-color);
+        }
+
+        /* Typography */
+        .logo-text, h2, h4{
+            font-family: 'Playfair Display', serif;
+        }
+        .logo-text{
+            font-size:1.5em;
+            color:var(--text-color);
+        }
+        h2{
+            font-size:3.5em;
+            margin:0 0 15px 0;
+            line-height:1.1;
+        }
+
+        /* Header & Navigasi */
+        header{
+            padding:25px 5%;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            background:var(--card);
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{
+            font-family: 'Playfair Display', serif;
+            font-size:2em;
+            font-weight:700;
+            color:var(--accent);
+            letter-spacing:1px;
+        }
+        .nav a{
+            text-decoration:none;
+            color:var(--text-color);
+            margin-left:20px;
+            font-weight:600;
+            cursor:pointer;
+            transition:color 0.3s;
+        }
+        .nav a:hover{color:var(--accent)}
+
+        /* Tombol (Button Styling) */
+        .btn{
+            padding:10px 18px;
+            border-radius:8px;
+            border:0;
+            cursor:pointer;
+            font-weight:600;
+            transition:background 0.3s;
+        }
+        .primary-btn{
+            background:var(--accent);
+            color:#fff;
+        }
+        .primary-btn:hover{background:#7c655d}
+        .secondary-btn{
+            background:transparent;
+            border:1px solid var(--accent);
+            color:var(--accent);
+        }
+        .secondary-btn:hover{
+            background:var(--accent-light);
+        }
+        .clear-btn{
+            background:#ccc;
+            color:var(--text-color);
+            padding:10px;
+        }
+
+        /* Hero Section */
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 450px;
+            gap:40px;
+            align-items:center;
+            padding:60px 5%;
+            max-width:1400px;
+            margin:0 auto;
+        }
+        .eyebrow{
+            display:inline-block;
+            background:var(--accent-light);
+            color:var(--accent);
+            padding:8px 15px;
+            border-radius:30px;
+            font-weight:700;
+            margin-bottom:16px;
+            font-size:0.9em;
+        }
+        p.lead{margin:0 0 25px 0;color:var(--muted);line-height:1.7;font-size:1.1em}
+        .shop-actions{display:flex;gap:15px;margin-top:20px}
+        .hero-image-wrap{
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 15px 50px rgba(0,0,0,0.1);
+        }
+        .hero-image-wrap img{width:100%;height:auto;display:block}
+
+        /* Catalog */
+        .catalog{padding:50px 5%;max-width:1400px;margin:0 auto}
+        .section-title h3{
+            font-size:2.5em;
+            margin:0 0 10px 0;
+            color:var(--accent);
+        }
+        .section-title p{margin:0 0 30px 0;color:var(--muted)}
+
+        .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+        .card{
+            background:var(--card);
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 4px 15px rgba(0,0,0,0.05);
+            transition:transform 0.3s;
+        }
+        .card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.1)}
+
+        .product-img{height:300px;overflow:hidden}
+        .product-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+        .card-body{padding:15px}
+        .prod-title{font-weight:700;margin:0 0 5px 0;font-size:1.1em}
+        .prod-price{color:var(--price-color);font-weight:700;font-size:1.3em}
+        .prod-desc{color:var(--muted);font-size:0.9em;margin:5px 0 15px 0}
+        .actions{display:flex;gap:10px;margin-top:10px}
+        .buy-btn{flex-grow:1;text-align:center;padding:12px}
+
+        /* Footer & Cart Drawer */
+        footer{
+            background:var(--accent-light);
+            padding:40px 5%;
+            border-top:1px solid #e0d0c0;
+            color:var(--muted);
+            font-size:0.9em;
+        }
+        .foot-grid{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            max-width:1400px;
+            margin:0 auto;
+        }
+        .foot-grid h4{color:var(--accent)}
+        .small{font-size:0.85em;color:var(--muted)}
+
+        .cart-btn{position:fixed;right:25px;bottom:25px;background:var(--accent);color:#fff;padding:12px 14px;border-radius:50%;box-shadow:0 12px 30px rgba(18,16,15,0.12);border:0;cursor:pointer;font-weight:700;width:50px;height:50px;z-index:200;}
+        .drawer{position:fixed;right:25px;bottom:90px;width:340px;background:var(--card);border-radius:14px;padding:15px;box-shadow:0 24px 60px rgba(18,16,15,0.12);display:none;z-index:200}
+        .drawer.open{display:block}
+        .drawer h4{margin:0 0 10px 0;font-weight:700}
+        .cart-item{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.06)}
+        .cart-item img{width:60px;height:60px;border-radius:8px;object-fit:cover}
+
+        /* Responsive */
+        @media (max-width:1100px){
+            .hero{grid-template-columns:1fr}
+            .hero-image-wrap{margin-top:30px;}
+            .grid{grid-template-columns:repeat(2,1fr)}
+            h2{font-size:3em;}
+        }
+        @media (max-width:650px){
+            .grid{grid-template-columns:repeat(1,1fr)}
+            header{padding:15px 5%;}
+            h2{font-size:2.2em;}
+            .drawer{right:15px;left:15px;width:auto;}
+        }
+    </style>
 </head>
 <body>
 
@@ -84,6 +271,117 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // =========================================================
+        // DATA PRODUK: GANTI DATA INI UNTUK MENGEDIT KATALOG
+        // =========================================================
+        const products = [
+            // Pastikan Anda mengunggah gambar dengan nama file ini ke folder images/
+            {id:1,name:'Pashmina Ceruti Premium',price:135000,desc:'Bahan ceruti babydoll premium, jatuh, adem. Pilihan warna eksklusif.',img:'images/pashmina1.jpg'},
+            {id:2,name:'Bella Square Exclusive',price:89000,desc:'Segi empat bahan Voal, sangat mudah dibentuk dan tegak di dahi.',img:'images/square1.jpg'},
+            {id:3,name:'Khimar Daily Plisket',price:155000,desc:'Khimar instan dengan detail plisket, syar\'i dan elegan.',img:'images/khimar1.jpg'},
+            {id:4,name:'Inner Ciput Rajut',price:25000,desc:'Inner antislip, nyaman dipakai seharian tanpa pusing.',img:'images/inner1.jpg'},
+            {id:5,name:'Pashmina Velvet Luxury',price:180000,desc:'Sangat cocok untuk pesta dan acara formal, efek berkilau mewah.',img:'images/pashmina2.jpg'},
+        ];
+        // =========================================================
+
+        // FUNGSI UTILITY (JANGAN DIUBAH)
+        function formatRupiah(n){ return 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }
+
+        // RENDER PRODUK
+        const grid = document.getElementById('product-grid')
+        products.forEach(p => {
+            const card = document.createElement('article')
+            card.className = 'card'
+            card.innerHTML = `
+                <div class="product-img"><img src="${p.img}" alt="${p.name}"></div>
+                <div class="card-body">
+                    <h4 class="prod-title">${p.name}</h4>
+                    <div class="prod-desc">${p.desc}</div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="prod-price">${formatRupiah(p.price)}</div>
+                        <div class="actions">
+                            <button class="btn primary-btn buy-btn" onclick="addToCart(${p.id})">Beli</button>
+                        </div>
+                    </div>
+                </div>
+            `
+            grid.appendChild(card)
+        })
+
+        // LOGIKA KERANJANG (JANGAN DIUBAH)
+        let cart = []
+        function addToCart(id){
+            const prod = products.find(x=>x.id===id)
+            const existing = cart.find(x=>x.id===id)
+            if(existing){ existing.qty++ } else { cart.push({id:prod.id,name:prod.name,price:prod.price,img:prod.img,qty:1}) }
+            updateCartUI()
+            document.getElementById('cart-drawer').classList.add('open')
+        }
+        function updateCartUI(){
+            const container = document.getElementById('cart-items')
+            container.innerHTML = ''
+            let total = 0
+            cart.forEach(item=>{
+                total += item.price * item.qty
+                const el = document.createElement('div')
+                el.className = 'cart-item'
+                el.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div style="flex:1">
+                        <div style="font-weight:700">${item.name}</div>
+                        <div class="small">${formatRupiah(item.price)} x ${item.qty}</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+                        <button class="btn primary-btn" style="padding:6px 10px;height:auto;font-size:0.8em;" onclick="changeQty(${item.id},1)">+</button>
+                        <button class="btn clear-btn" style="padding:6px 10px;height:auto;font-size:0.8em;" onclick="changeQty(${item.id},-1)">-</button>
+                    </div>
+                `
+                container.appendChild(el)
+            })
+            document.getElementById('cart-total').innerText = formatRupiah(total)
+            document.getElementById('cart-count').innerText = cart.reduce((s,i)=>s+i.qty,0)
+        }
+        function changeQty(id,delta){
+            const item = cart.find(x=>x.id===id)
+            if(!item) return
+            item.qty += delta
+            if(item.qty <= 0){ cart = cart.filter(x=>x.id!==id) }
+            updateCartUI()
+        }
+        function clearCart(){ cart = []; updateCartUI(); }
+        function toggleCart(){ document.getElementById('cart-drawer').classList.toggle('open') }
+
+        function checkoutWhatsApp(){
+            if(cart.length===0){ alert('Keranjang kosong. Mohon tambahkan produk sebelum checkout.'); return }
+            const lines = []
+            lines.push('Halo FAHMI COLLECTION, saya ingin melakukan pemesanan (Checkout WA):')
+            lines.push('---')
+            cart.forEach(item=>{
+                lines.push(`✅ ${item.qty} x ${item.name} (${formatRupiah(item.price)})`)
+            })
+            const total = cart.reduce((s,i)=>s+i.price*i.qty,0)
+            lines.push('---')
+            lines.push('TOTAL BELANJA: ' + formatRupiah(total))
+            lines.push('---')
+            lines.push('DATA CUSTOMER:\nNama:\nAlamat Pengiriman Lengkap:\nCatatan Tambahan:')
+
+            const message = encodeURIComponent(lines.join('\n'))
+            const phone = document.getElementById('wa-number').innerText.replace(/[^+0-9]/g,'')
+            const url = `https://wa.me/${phone.replace('+','')}?text=${message}`
+            window.open(url,'_blank')
+        }
+        function openWhatsApp(text){
+            const phone = document.getElementById('wa-number').innerText.replace(/[^+0-9]/g,'')
+            const url = `https://wa.me/${phone.replace('+','')}?text=${encodeURIComponent(text)}`
+            window.open(url,'_blank')
+        }
+        function scrollToSection(id){
+            const el = document.getElementById(id)
+            if(!el) window.scrollTo({top:0,behavior:'smooth'})
+            else el.scrollIntoView({behavior:'smooth',block:'start'})
+        }
+        updateCartUI()
+    </script>
 </body>
 </html>
